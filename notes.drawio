@@ -34,9 +34,6 @@
                 <mxCell id="4" value="Browser&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
                     <mxGeometry x="105" y="65" width="70" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="wdwdwada" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="45" width="80" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="12" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="140" y="200" as="sourcePoint"/>
@@ -180,6 +177,9 @@
                 </mxCell>
                 <mxCell id="53" value="&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 228, 94);&quot;&gt;The browser executes the callback function that renders the notes&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FFFFFF;" vertex="1" parent="1">
                     <mxGeometry x="225" y="1010" width="370" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;font color=&quot;#000000&quot; style=&quot;background-color: rgb(255, 228, 94);&quot;&gt;At this step the Form Data are also submitted and the server side code which in this diagram is omitt&lt;br&gt;ed is responsible for pushing the new note in the array.&lt;br&gt;&amp;nbsp;&lt;/font&gt;" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=default;fontColor=#FFFFFF;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="740" y="170" width="870" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
