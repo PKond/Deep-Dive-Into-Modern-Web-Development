@@ -1,6 +1,27 @@
+import React, { useState, useEffect } from 'react';
+import weatherService from '../services/weather';
+
 const Countries = ({ filteredCountries }) => {
-  console.log("🚀 ~ Countries ~ filteredCountries:", filteredCountries);
+  const [weatherData, setWeatherData] = useState(null);
   const numCountries = filteredCountries.length;
+
+  useEffect(() => {
+    if (numCountries === 1) {
+      const country = filteredCountries[0];
+      weatherService.getWeather(country.capital)
+        .then((data) => {
+          setWeatherData(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching weather data:", error);
+        });
+    }
+  }, [filteredCountries, numCountries]);
+
+  const handleOnClick = (countryName) => {
+    const url = `https://studies.cs.helsinki.fi/restcountries/api/name/${countryName}`;
+    window.open(url, "_blank");
+  };
 
   return (
     <div>
@@ -9,18 +30,26 @@ const Countries = ({ filteredCountries }) => {
       ) : numCountries > 1 ? (
         <ul>
           {filteredCountries.map((country, index) => (
-            <li key={index}>{country.name.common}</li>
+            <li key={index}>
+              {country.name.common}
+              <button
+                onClick={() => handleOnClick(country.name.common)}
+                style={{ backgroundColor: "#fff", color: "#000" }}
+              >
+                Show
+              </button>
+            </li>
           ))}
         </ul>
       ) : numCountries === 1 ? (
         <div>
           <h1>{filteredCountries[0].name.common}</h1>
           <div>
-            <span>capital </span>
+            <span>Capital: </span>
             {filteredCountries[0].capital}
           </div>
           <div>
-            <span>area </span>
+            <span>Area: </span>
             {filteredCountries[0].area}
           </div>
           <br />
@@ -34,8 +63,23 @@ const Countries = ({ filteredCountries }) => {
               )}
             </ul>
           </div>
-		  <div>
-            <img src={filteredCountries[0].flags.png} alt="" style= {{ maxHeight: "180px"}}/>
+          <div>
+            <img
+              src={filteredCountries[0].flags.png}
+              alt=""
+              style={{ maxHeight: "180px" }}
+            />
+          </div>
+          <div>
+            <span>Weather in {filteredCountries[0].capital}: </span>
+            {weatherData ? (
+              <div>
+                <p>Temperature: {weatherData.main.temp}°C</p>
+                <p>Weather: {weatherData.weather[0].description}</p>
+              </div>
+            ) : (
+              <p>Loading weather data...</p>
+            )}
           </div>
         </div>
       ) : (
