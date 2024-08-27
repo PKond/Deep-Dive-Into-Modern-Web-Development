@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require('cors');
-
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -10,6 +10,14 @@ app.use(express.json());
 
 morgan.token('body', (req) => JSON.stringify(req.body));
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
+
+// Serve static files from the 'dist' directory
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Handle all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 let persons = [
   { id: "1", name: "Arto Hellas", number: "040-123456" },
