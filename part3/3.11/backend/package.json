@@ -5,7 +5,6 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "postinstall": "npm install",
     "clean:frontend": "rm -rf ../frontend/dist",
     "build:frontend": "cd ../frontend && npm install && npm run build && cp -r dist ../backend/dist",
     "deploy:full": "npm run clean:frontend && npm run build:frontend && cd ../backend && npm install && git add . && git commit -m 'Update frontend build' || true && git push origin main"
