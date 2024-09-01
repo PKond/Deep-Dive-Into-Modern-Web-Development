@@ -16,6 +16,7 @@ let persons = [
   { id: "2", name: "Ada Lovelace", number: "39-44-5323523" },
   { id: "3", name: "Dan Abramov", number: "12-43-234345" },
   { id: "4", name: "Mary Poppendieck", number: "39-23-6423122" },
+  { id: "5", name: "Pandelis Kondos", number: "123-456-789" },
 ];
 
 // API Routes
