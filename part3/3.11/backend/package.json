@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm start",
     "dev": "nodemon index.js",
 	"configure-git": "git config user.email 'pandelis777@gmail.com' && git config user.name 'Pandelis' && git remote add origin https://github.com/PKond/Deep-Dive-Into-Modern-Web-Development.git || true",
     "clean:frontend": "rm -rf ../frontend/dist",
