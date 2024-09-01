@@ -1,25 +1,24 @@
 {
-	"name": "exercise",
-	"version": "1.0.0",
-	"main": "index.js",
-	"scripts": {
-	  "clean:frontend": "rimraf ../frontend/dist",
-	  "build:frontend": "cd ../frontend && npm run build && cp -r dist ../backend/dist",
-	  "deploy:full": "npm run clean:frontend && npm run build:frontend && git add . && git commit -m 'Update frontend build' && git push",
-	  "start": "node index.js",
-	  "dev": "nodemon index.js"
-	},
-	"author": "Pandelis Kondos",
-	"license": "ISC",
-	"description": "",
-	"dependencies": {
-	  "cors": "^2.8.5",
-	  "express": "^4.19.2",
-	  "morgan": "^1.10.0"
-	},
-	"devDependencies": {
-	  "nodemon": "^3.1.4",
-	  "rimraf": "^5.0.1"
-	}
+  "name": "exercise",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean:frontend": "npx rimraf ../frontend/dist",
+    "build:frontend": "cd ../frontend && npm run build && cp -r dist ../backend/dist",
+    "deploy:full": "npm run clean:frontend && npm run build:frontend && git add . && git commit -m 'Update frontend build' && git push",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Pandelis Kondos",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "rimraf": "^5.0.1"
   }
-  
+}
