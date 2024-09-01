@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clean:frontend": "del /s /q ../frontend/dist",
+    "clean:frontend": "rm -rf ../frontend/dist",
     "build:frontend": "cd ../frontend && npm install && npm run build && cp -r dist ../backend/dist",
     "deploy:full": "npm run clean:frontend && npm run build:frontend && git add . && git commit -m 'Update frontend build' && git push"
   },
