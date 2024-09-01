@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "clean:frontend": "node clean.js",
-    "build:frontend": "cd ../frontend && npm run build && cp -R dist ../backend/dist",
+    "clean:frontend": "rm -rf ../frontend/dist",
+    "build:frontend": "cd ../frontend && npm install && npm run build && cp -R dist ../backend/dist",
     "deploy:full": "npm run clean:frontend && npm run build:frontend && git add . && git commit -m 'Update frontend build' && git push"
   },
   "author": "Pandelis Kondos",
