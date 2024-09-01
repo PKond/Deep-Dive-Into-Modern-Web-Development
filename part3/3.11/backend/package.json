@@ -5,7 +5,8 @@
   "scripts": {
     "clean:frontend": "rm -rf ../frontend/dist",
     "build:frontend": "cd ../frontend && npm install && npm run build && cp -r dist ../backend/dist",
-    "deploy:full": "npm run clean:frontend && npm run build:frontend && git add . && git commit -m 'Update frontend build' && git push"
+    "configure-git": "git config user.email 'pandelis777@gmail.com' && git config user.name 'PKond'",
+    "deploy:full": "npm run configure-git && npm run clean:frontend && npm run build:frontend && git add . && git commit -m 'Update frontend build' && git push"
   },
   "author": "Pandelis Kondos",
   "license": "ISC",
