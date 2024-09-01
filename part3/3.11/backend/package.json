@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+	"configure-git": "git config user.email 'pandelis777@gmail.com' && git config user.name 'Pandelis' && git remote add origin https://github.com/PKond/Deep-Dive-Into-Modern-Web-Development.git || true",
     "clean:frontend": "rm -rf ../frontend/dist",
     "build:frontend": "cd ../frontend && npm install && npm run build && cp -r dist ../backend/dist",
     "deploy:full": "npm run clean:frontend && npm run build:frontend && cd ../backend && npm install && git add . && git commit -m 'Update frontend build' || true && git push origin main"
